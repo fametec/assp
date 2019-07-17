@@ -1,0 +1,21 @@
+version: '3.2'
+#
+### Services
+#
+services:
+#
+# ASSP
+#
+   assp:
+    image: fametec/assp:latest
+    restart: always
+    container_name: assp
+    ports:
+     - "25:25"
+     - "587:587"
+     - "465:465"
+     - "2525:2525"
+     - "55555:55555"
+    volumes:
+     - /root/assp/:/var/db/assp/:rw
+
