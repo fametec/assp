@@ -3,7 +3,7 @@
 The Anti-Spam SMTP Proxy (ASSP) Server project aims to create an open source platform-independent SMTP Proxy server which implements auto-whitelists, self learning Hidden-Markov-Model and/or Bayesian, Greylisting, DNSBL, DNSWL, URIBL, SPF, SRS, Backscatter, Virus scanning, attachment blocking, Senderbase and multiple other filter methods. 
 
 
-Features
+## Features
 
     Multiple Weighted DNSBLs
     Multiple Weighted URIBLs
