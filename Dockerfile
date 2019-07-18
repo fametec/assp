@@ -22,7 +22,8 @@ RUN apt-get -y install zip \
 	libmail-dkim-perl \
 	libcompress-raw-zlib-perl \
 	db5.3-util \
-	libberkeleydb-perl 
+	libberkeleydb-perl \
+	mariadb-client
 
 
 
