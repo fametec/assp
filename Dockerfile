@@ -24,9 +24,7 @@ RUN apt-get -y install zip \
 	db5.3-util \
 	libberkeleydb-perl \
 	mariadb-client
-
-
-
+	
 RUN perl -MCPAN -e 'install App::cpanminus'
 RUN perl -MCPAN -e 'install App::cpanoutdated'
 RUN perl -MCPAN -e 'install Encode::Detect'
@@ -139,8 +137,7 @@ RUN mkdir -p /var/db && \
 	mv assp/assp.cfg.rename_on_new_install assp/assp.cfg && \
 	cd /var/db/assp/ && \
 	unzip /tmp/assp.mod.zip
-	 
-
+	
 RUN cd /var/db/assp/assp.mod/install && \
 	perl mod_inst.pl 
 
@@ -150,7 +147,12 @@ RUN chown -R nobody:nogroup /var/db/assp
 
 VOLUME [ "/var/db/assp" ]
 
-EXPOSE 2525/tcp 465/tcp 25/tcp 55555/tcp 587/tcp
+EXPOSE 25/tcp 2525/tcp 465/tcp 587/tcp 55555/tcp 
 
 CMD [ "perl", "/var/db/assp/assp.pl", "/var/db/assp" ]
+
+RUN  apt-get -y clean && \
+	rm -rf $HOME/.cpan && \
+	rm -rf /tmp/assp.mod.zip && \ 
+	rm -rf /tmp/ASSP_*_install.zip
 
