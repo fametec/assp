@@ -108,3 +108,22 @@ Ref: https://sourceforge.net/projects/assp/
     volumes: 
       assp-volume:
       assp-db-volume:
+
+
+
+## Login
+
+URL: http://<ip_address>:55555
+User: root
+Password: nospam4me
+
+## Support
+
+contato@fametec.com.br
+
+## e-Learning
+
+https://www.fametreinamentos.com.br
+
+
+
