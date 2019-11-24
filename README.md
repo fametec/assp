@@ -1,4 +1,5 @@
-# Anti-Spam SMTP Proxy Server
+
+# What is ASSP?
 
 The Anti-Spam SMTP Proxy (ASSP) Server project aims to create an open source platform-independent SMTP Proxy server which implements auto-whitelists, self learning Hidden-Markov-Model and/or Bayesian, Greylisting, DNSBL, DNSWL, URIBL, SPF, SRS, Backscatter, Virus scanning, attachment blocking, Senderbase and multiple other filter methods. 
 
@@ -57,13 +58,23 @@ The Anti-Spam SMTP Proxy (ASSP) Server project aims to create an open source pla
     zero day virus detection
     VirusTotal API
 
+https://sourceforge.net/projects/assp/ 
 
 
+# How to use this image
 
-Ref: https://sourceforge.net/projects/assp/ 
+## start a ASSP instance
+
+### MariaDB
+
+    docker run -d --rm --name mariadb -e MYSQL_DATABASE=assp -e MYSQL_USER=assp -e MYSQL_PASSWORD=4aae4012 -e MYSQL_RANDOM_ROOT_PASSWORD=1 -p 3306:3306 docker.io/mariadb
+
+### ASSP
+
+    docker run -d --rm --name assp -p 25:25 -p 587:587 -p 465:465 -p 2525:2525 -p 55555:55555 --link mariadb:mariadb fametec/assp
 
 
-## docker-compose.yaml
+## ... or docker-compose.yaml
 
 
     version: '3.2'
