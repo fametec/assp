@@ -133,7 +133,7 @@ COPY assp.mod.zip ASSP_2.6.3_19169_install.zip /tmp/
 RUN mkdir -p /var/db && \
 	mkdir -p /var/db/assp/tmpDB/files && \
 	cd /var/db && \
-	unzip /tmp/ASSP_2.6.3_19169_install.zip && \
+	unzip /tmp/ASSP_2.6.3_20002_install.zip && \
 	mv assp/assp.cfg.rename_on_new_install assp/assp.cfg && \
 	cd /var/db/assp/ && \
 	unzip /tmp/assp.mod.zip
