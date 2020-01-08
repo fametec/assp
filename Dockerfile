@@ -128,7 +128,7 @@ RUN perl -MCPAN -e 'install Archive::Libarchive::XS'
 RUN perl -MCPAN -e 'install Sys::Syslog'
 RUN perl -MCPAN -e 'install Filesys::Df'
 
-COPY assp.mod.zip ASSP_2.6.3_19169_install.zip /tmp/ 
+COPY assp.mod.zip ASSP_2.6.3_20002_install.zip /tmp/ 
 
 RUN mkdir -p /var/db && \
 	mkdir -p /var/db/assp/tmpDB/files && \
