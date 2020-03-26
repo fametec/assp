@@ -143,6 +143,13 @@ RUN cd /var/db/assp/assp.mod/install && \
 
 ADD assp.cfg /var/db/assp/
 
+
+RUN  apt-get -y clean && \
+	rm -rf $HOME/.cpan && \
+	rm -rf /tmp/assp.mod.zip && \ 
+	rm -rf /tmp/ASSP_*_install.zip
+
+
 RUN chown -R nobody:nogroup /var/db/assp
 
 VOLUME [ "/var/db/assp" ]
@@ -150,9 +157,4 @@ VOLUME [ "/var/db/assp" ]
 EXPOSE 25/tcp 2525/tcp 465/tcp 587/tcp 55555/tcp 
 
 CMD [ "perl", "/var/db/assp/assp.pl", "/var/db/assp" ]
-
-RUN  apt-get -y clean && \
-	rm -rf $HOME/.cpan && \
-	rm -rf /tmp/assp.mod.zip && \ 
-	rm -rf /tmp/ASSP_*_install.zip
 
