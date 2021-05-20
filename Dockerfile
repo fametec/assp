@@ -24,7 +24,7 @@ RUN cpan-outdated -p|cpanm -n
 
 ADD assp.cfg /var/db/assp/
 
-RUN rm -rf /root/.cpan/sources && \
+RUN rm -rf /root/.cpan && \
 	rm -rf /tmp/assp.mod.zip && \ 
 	rm -rf /tmp/ASSP_*_install.zip
 
