@@ -2,11 +2,9 @@ FROM perl:threaded
 
 MAINTAINER eduardo@fametec.com.br
 
-WORKDIR /tmp/
-
-ADD https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/2.6.5%2021074/ASSP_2.6.5_21074_install.zip .
-
-ADD https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/ASSP%20V2%20module%20installation/assp.mod.zip .
+RUN cd /tmp && \
+	curl -OL https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/2.6.5%2021074/ASSP_2.6.5_21074_install.zip && \
+	curl -OL https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/ASSP%20V2%20module%20installation/assp.mod.zip
 
 # COPY assp.mod.zip ASSP_2.6.5_21074_install.zip /tmp/ 
 
@@ -21,6 +19,8 @@ RUN mkdir -p /var/db && \
 WORKDIR /var/db/assp
 	
 RUN perl /var/db/assp/assp.mod/install/mod_inst.pl /var/db/assp 
+
+RUN cpan-outdated -p|cpanm -n
 
 ADD assp.cfg /var/db/assp/
 
