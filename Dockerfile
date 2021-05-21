@@ -22,6 +22,20 @@ RUN perl /var/db/assp/assp.mod/install/mod_inst.pl /var/db/assp
 
 RUN cpan-outdated -p|cpanm -n
 
+RUN cpanm Mail::SPF::Query --force
+
+RUN cpanm IO::Socket::INET6 --force
+
+# RUN cpanm Archive::Rar --force
+
+RUN cpanm IO::Compress::Lzma --force
+
+RUN cpanm IO::Compress::Xz --force
+
+RUN cpanm IO::Compress::Zip --force 
+
+RUN cpanm Archive::Libarchive::XS --force
+
 ADD assp.cfg /var/db/assp/
 
 RUN rm -rf /root/.cpan && \

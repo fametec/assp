@@ -39,6 +39,13 @@ services:
       - "3306:3306"
 
 
+  clamd: 
+    image: fametec/clamav:latest
+    restart: unless-stopped
+    ports: 
+      - "3310:3310"
+
+
 volumes: 
   assp-volume:
   assp-db-volume:
