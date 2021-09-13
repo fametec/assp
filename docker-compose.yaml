@@ -28,7 +28,7 @@ services:
     image: docker.io/mariadb:latest
     restart: unless-stopped
     volumes: 
-      - assp-db-volume:/var/www/mysql:rw
+      - assp-db-volume:/var/lib/mysql:rw
     environment: 
       MYSQL_DATABASE: assp
       MYSQL_USER: assp
