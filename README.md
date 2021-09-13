@@ -86,7 +86,7 @@ https://sourceforge.net/projects/assp/
     # ASSP
     #
       assp:
-        image: fametec/assp:latest
+        image: fametec/assp:2.6.5_21218
         restart: unless-stopped
         container_name: assp
         ports:
