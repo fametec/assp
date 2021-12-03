@@ -17,10 +17,14 @@ services:
       - "465:465"
       - "2525:2525"
       - "55555:55555"
-    volumes:
-      - assp-volume:/var/db/assp/:rw
+#    volumes:
+#      - assp-volume:/var/db/assp/:rw
     depends_on: 
       - db
+#    command: 
+#      - "sleep"
+#      - "10000"
+
 
 #
 # MYSQL
@@ -28,8 +32,8 @@ services:
   db: 
     image: docker.io/mariadb:latest
     restart: unless-stopped
-    volumes: 
-      - assp-db-volume:/var/www/mysql:rw
+#    volumes: 
+#      - assp-db-volume:/var/www/mysql:rw
     environment: 
       MYSQL_DATABASE: assp
       MYSQL_USER: assp
@@ -46,6 +50,6 @@ services:
       - "3310:3310"
 
 
-volumes: 
-  assp-volume:
-  assp-db-volume:
+# volumes: 
+#  assp-volume:
+#  assp-db-volume:
