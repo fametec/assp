@@ -1,0 +1,55 @@
+version: '3.2'
+#
+### Services
+#
+services:
+#
+# ASSP
+#
+  assp:
+    build: .
+    image: fametec/assp:2.6.5_21218
+    restart: unless-stopped
+    container_name: assp
+    ports:
+      - "25:25"
+      - "587:587"
+      - "465:465"
+      - "2525:2525"
+      - "55555:55555"
+#    volumes:
+#      - assp-volume:/var/db/assp/:rw
+    depends_on: 
+      - db
+#    command: 
+#      - "sleep"
+#      - "10000"
+
+
+#
+# MYSQL
+#
+  db: 
+    image: docker.io/mariadb:latest
+    restart: unless-stopped
+#    volumes: 
+#      - assp-db-volume:/var/www/mysql:rw
+    environment: 
+      MYSQL_DATABASE: assp
+      MYSQL_USER: assp
+      MYSQL_PASSWORD: 4aae40121f24c0e9a8ebc1a78d4da966 
+      MYSQL_RANDOM_ROOT_PASSWORD: 1 
+    ports: 
+      - "3306:3306"
+
+
+  clamd: 
+    image: fametec/clamav:latest
+    restart: unless-stopped
+    ports: 
+      - "3310:3310"
+
+
+# volumes: 
+#  assp-volume:
+#  assp-db-volume:
