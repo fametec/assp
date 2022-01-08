@@ -17,7 +17,25 @@ services:
       - "2525:2525"
       - "55555:55555"
     volumes:
-      - assp-volume:/var/db/assp/:rw
+      - ./assp-data/assp.cfg:/var/db/assp/assp.cfg
+      - ./assp-data/assp.cfg.bak:/var/db/assp/assp.cfg.bak
+      - ./assp-data/certs/:/var/db/assp/certs/
+      - ./assp-data/files/:/var/db/assp/files/
+      - ./assp-data/logs/:/var/db/assp/logs/
+      - ./assp-data/tmpDB/:/var/db/assp/tmpDB/
+      - ./assp-data/virus/:/var/db/assp/virus/
+      - ./assp-data/virusscan/:/var/db/assp/virusscan/
+      - ./assp-data/sl-cache/:/var/db/assp/sl-cache/
+      - ./assp-data/spam/:/var/db/assp/spam/
+      - ./assp-data/notspam/:/var/db/assp/notspam/
+      - ./assp-data/okmail/:/var/db/assp/okmail/
+      - ./assp-data/discarded/:/var/db/assp/discarded/
+      - ./assp-data/quarantine/:/var/db/assp/quarantine/
+      - ./assp-data//errors/:/var/db/assp/errors/
+      - ./assp-data/pb/:/var/db/assp/pb/
+      - ./assp-data/mysql/:/var/db/assp/mysql/
+      # - ./certbot/:/var/db/assp/certs/certbot/
+      # assp-volume:/var/db/assp/
     depends_on: 
       - db
 
@@ -39,5 +57,5 @@ services:
 
 
 volumes: 
-  assp-volume:
+#  assp-volume:
   assp-db-volume:
