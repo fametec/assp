@@ -10,7 +10,7 @@ RUN cd /tmp && \
 RUN mkdir -p /var/db && \
 	mkdir -p /var/db/assp/tmpDB/files && \
 	cd /var/db && \
-	unzip /tmp/ASSP_2.6.7_22137_install.zip && \
+	unzip /tmp/ASSP_2.6.7_22137install.zip && \
 	mv assp/assp.cfg.rename_on_new_install assp/assp.cfg && \
 	cd /var/db/assp/ && \
 	unzip /tmp/assp.mod.zip
