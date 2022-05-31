@@ -4,7 +4,7 @@ FROM perl:5.34.0-threaded AS BUILD
 MAINTAINER eduardo@fametec.com.br
 
 RUN cd /tmp && \
-	curl -OL https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/2.6.5%2021218/ASSP_2.6.5_21218_install.zip && \
+	curl -OL https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/2.6.7%2022137/ASSP_2.6.7_22137install.zip && \
 	curl -OL https://sourceforge.net/projects/assp/files/ASSP%20V2%20multithreading/ASSP%20V2%20module%20installation/assp.mod.zip
 
 RUN mkdir -p /var/db && \
